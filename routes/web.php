@@ -15,16 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return response()->json([ 'message' => 'B2 Atlas Web API Service Version 1.0' ], 200);
-});
-
-Route::get('fetch', function() {
-    $response = Http::withHeaders([
-        'Content-Type' => 'application/json',
-        'Accept' => 'application/json',
-        'Sp-Client-Id' => config('services.opsn.client_id'),
-        'Sp-Client-Secret' => config('services.opsn.client_secret')
-    ])->get(config('services.opsn.api_endpoint') . '/authorized/agency/opsn?page=1&limit=10');
-
-    dd($response->json());
+    return response()->json([ 'message' => 'Bot Builders Web API Service Version 1.0' ], 200);
 });
